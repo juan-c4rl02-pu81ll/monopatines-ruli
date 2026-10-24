@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopatines Ruli - Monopatines urbanos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <header id="inicio">
+        <a href="index.html" class="logo">
+            <img src="Imagenes/logo.png" alt="Logo Monopatines Ruli">
+            <h1>Monopatines Ruli</h1>
+        </a>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li id="submenu-Item">
+                    <a href="#" id="submenu-trigger">Productos</a>
+                    <ul class="submenu" id="submenu">
+                        <li><a href="#catalogo">Monopatines</a></li>
+                        <li><a href="#catalogo">Accesorios</a></li>
+                        <li><a href="#catalogo">Repuestos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" class="link-abrir-carrito">Carrito <span class="badge-carrito" id="contadorCarrito">0</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="header-acciones">
+            <button class="btn-carrito-header" id="btnAbrirCarrito" aria-label="Abrir carrito">
+                🛒 <span class="badge-carrito" id="contadorCarritoHeader">0</span>
+            </button>
+
+            <div class="tema">
+                <button id="btnTema">Cambiar Tema</button>
+            </div>
+
+            <div class="menu-movil">
+                <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menu">
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                </button>
+
+                <nav class="navMovil" id="navMovil">
+                    <ul class="lista-movil">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li id="submenu-Movil">
+                            <a href="#" id="btn-submenuMovil">Productos ▾</a>
+                            <ul class="submenu2" id="submenu2">
+                                <li><a href="#catalogo">Monopatines</a></li>
+                                <li><a href="#catalogo">Accesorios</a></li>
+                                <li><a href="#catalogo">Repuestos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#" class="link-abrir-carrito">Carrito <span class="badge-carrito" id="contadorCarritoMovil">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <h2>Horarios y promos</h2>
+        <ul>
+            <li>Lunes a viernes: 10:00 a 19:00 hs</li>
+            <li>S&aacute;bados: 10:00 a 14:00 hs</li>
+            <li>Promo: monopat&iacute;n + casco con 10% off</li>
+            <li>Ubicaci&oacute;n: Echeverria  N&deg; 549-1Piso</li>
+            <li>Instagram: @monopatinesruli</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <section class="hero">
+            <div class="hero-texto">
+                <h2>Moverte por la ciudad nunca fue tan f&aacute;cil</h2>
+                <p>Monopatines urbanos para ir al trabajo, a la facu o pasear sin complicaciones.</p>
+                <button id="cta">Ver productos</button>
+            </div>
+            <img class="hero-imagen" src="Imagenes/hero_monopatin.jpg" alt="Persona circulando en monopat&iacute;n por la ciudad">
+        </section>
+
+        <section id="catalogo" class="catalogo">
+            <h2>Lo que tenemos</h2>
+            <div class="filtros">
+                <button data-categoria="Todos">Todos</button>
+                <button data-categoria="Monopatines">Monopatines</button>
+                <button data-categoria="Accesorios">Accesorios</button>
+                <button data-categoria="Repuestos">Repuestos</button>
+            </div>
+            <div class="grid-productos" id="gridProductos"></div>
+        </section>
+
+        <section id="nosotros" class="nosotros">
+            <h2>Nosotros</h2>
+            <p>Somos una tienda de monopatines y accesorios urbanos. Nos gusta lo que hacemos y queremos que te muevas seguro.</p>
+            <p>Nuestra misi&oacute;n es acercar movilidad urbana simple, resistente y al alcance de todos.</p>
+        </section>
+
+        <section id="contacto" class="formulario">
+            <h2>Escribinos</h2>
+            <form id="formContacto" action="guardar.php" method="post">
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" name="email" placeholder="tu@mail.com" required>
+                <select id="producto_id" name="producto_id" required>
+                    <option value="">Eleg&iacute; un producto de inter&eacute;s</option>
+                    <optgroup label="Monopatines">
+                        <option value="1">Monopat&iacute;n Urban</option>
+                        <option value="2">Monopat&iacute;n Pro</option>
+                        <option value="3">Monopat&iacute;n Kids</option>
+                        <option value="4">Monopat&iacute;n Street</option>
+                        <option value="5">Monopat&iacute;n Electric</option>
+                    </optgroup>
+                    <optgroup label="Accesorios">
+                        <option value="6">Casco de seguridad</option>
+                        <option value="7">Casco Full Face</option>
+                        <option value="8">Rodilleras y coderas</option>
+                        <option value="9">Guantes de protecci&oacute;n</option>
+                        <option value="10">Luces LED</option>
+                        <option value="11">Bolso de transporte</option>
+                    </optgroup>
+                    <optgroup label="Repuestos">
+                        <option value="12">Ruedas de repuesto</option>
+                        <option value="13">Frenos de disco</option>
+                        <option value="14">Grip antideslizante</option>
+                        <option value="15">Kit de herramientas</option>
+                    </optgroup>
+                </select>
+                <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
+                <button type="submit" id="btnEnviar">Enviar</button>
+            </form>
+            <div id="resultadoForm"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer-info">&copy; 2026 Monopatines Ruli</p>
+        <ul class="footer-redes">
+            <li><a href="https://www.instagram.com/monopatinesruli" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/monopatinesruli" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/5491123456789" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+    </footer>
+
+</div>
+
+<a class="whatsapp-flotante" href="https://wa.me/5491123456789" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="WhatsApp">
+</a>
+
+<!-- Overlay para oscurecer el fondo cuando se abre el carrito lateral -->
+<div class="carrito-overlay" id="carritoOverlay"></div>
+
+<!-- Panel lateral deslizante del Carrito -->
+<aside class="carrito-lateral" id="carritoLateral" aria-label="Carrito de compras">
+    <div class="carrito-lateral-header">
+        <div class="carrito-lateral-titulo">
+            <h3>Tu Carrito</h3>
+            <span class="badge-items" id="cantItemsLateral">0</span>
+        </div>
+        <button class="btn-cerrar-carrito" id="btnCerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+    </div>
+
+    <div class="carrito-lateral-cuerpo" id="listaCarritoLateral">
+        <p class="carrito-vacio">El carrito est&aacute; vac&iacute;o.</p>
+    </div>
+
+    <div class="carrito-lateral-footer">
+        <div class="fila-total">
+            <span>Total:</span>
+            <strong id="totalPagarLateral">$0</strong>
+        </div>
+        <div class="acciones-lateral">
+            <button class="btn-vaciar" id="btnVaciarLateral">Vaciar</button>
+            <button class="btn-finalizar" id="btnFinalizarLateral">Comprar</button>
+        </div>
+        <a href="carrito.html" class="link-pantalla-completa">Ver carrito en pantalla completa &rarr;</a>
+    </div>
+</aside>
+
+<script src="Javascript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Archivos de trabajo local y transcripciones
+*.mp4
+*.docx
+*.py
+dist_infinityfree/
+Transcripciones/
+test_mysql.php
+consigna_extraida.txt
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

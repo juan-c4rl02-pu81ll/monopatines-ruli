@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras - Monopatines Ruli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <header id="inicio">
+        <a href="index.html" class="logo">
+            <img src="Imagenes/logo.png" alt="Logo Monopatines Ruli">
+            <h1>Monopatines Ruli</h1>
+        </a>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li id="submenu-Item">
+                    <a href="index.html#catalogo" id="submenu-trigger">Productos</a>
+                    <ul class="submenu" id="submenu">
+                        <li><a href="index.html#catalogo">Monopatines</a></li>
+                        <li><a href="index.html#catalogo">Accesorios</a></li>
+                        <li><a href="index.html#catalogo">Repuestos</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="carrito.html" class="activo">Carrito</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-acciones">
+            <div class="tema">
+                <button id="btnTema">Cambiar Tema</button>
+            </div>
+
+            <div class="menu-movil">
+                <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menu">
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                </button>
+
+                <nav class="navMovil" id="navMovil">
+                    <ul class="lista-movil">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li id="submenu-Movil">
+                            <a href="#" id="btn-submenuMovil">Productos ▾</a>
+                            <ul class="submenu2" id="submenu2">
+                                <li><a href="index.html#catalogo">Monopatines</a></li>
+                                <li><a href="index.html#catalogo">Accesorios</a></li>
+                                <li><a href="index.html#catalogo">Repuestos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="carrito.html">Carrito</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main" style="grid-column: 1 / -1;">
+
+        <section class="seccion-carrito">
+            <h2>Carrito de compras</h2>
+            <div class="carrito-navegacion">
+                <a href="index.html" class="link-volver">&larr; Volver a cargar productos</a>
+            </div>
+
+            <div id="listadoProductos" class="listado-carrito">
+                <!-- Se cargan dinamicamente con JavaScript desde MySQL -->
+            </div>
+
+            <div class="carrito-resumen" id="carritoResumen">
+                <div class="resumen-fila">
+                    <span>Cantidad de productos:</span>
+                    <strong id="cantidadItems">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span>Total a pagar:</span>
+                    <strong id="totalPagar" class="precio-total">$0.00</strong>
+                </div>
+                <div class="carrito-acciones">
+                    <button id="btnVaciar" class="btn-vaciar">Vaciar lista completa</button>
+                    <button id="btnFinalizar" class="btn-finalizar">Finalizar compra</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="grid-column: 1 / -1;">
+        <p class="footer-info">&copy; 2026 Monopatines Ruli</p>
+        <ul class="footer-redes">
+            <li><a href="https://www.instagram.com/monopatinesruli" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/monopatinesruli" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/5491123456789" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+    </footer>
+
+</div>
+
+<a class="whatsapp-flotante" href="https://wa.me/5491123456789" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="WhatsApp">
+</a>
+
+<script src="Javascript/carrito.js"></script>
+</body>
+</html>
