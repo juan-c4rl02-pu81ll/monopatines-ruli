@@ -351,16 +351,20 @@ function cargarCarritoLateral(abrirAlTerminar){
 
             let total = 0;
             items.forEach(function(item){
-                const precio = parseFloat(item.precio_unitario) || 0;
+                const nombre = item.producto_nombre || item.nombre_producto || "Producto";
+                const imagen = item.producto_imagen || item.foto_producto || "Imagenes/hero_monopatin.jpg";
+                const categoria = item.categoria_nombre || item.nombre_categoria || "Monopatines";
+                const rawPrecio = item.producto_precio !== undefined ? item.producto_precio : (item.precio_unitario !== undefined ? item.precio_unitario : 0);
+                const precio = parseFloat(rawPrecio) || 0;
                 total += precio;
 
                 const divItem = document.createElement("div");
                 divItem.classList.add("item-lateral");
                 divItem.innerHTML = `
-                    <img src="${item.foto_producto}" alt="${item.nombre_producto}">
+                    <img src="${imagen}" alt="${nombre}">
                     <div class="item-lateral-info">
-                        <h4>${item.nombre_producto}</h4>
-                        <span class="cat">${item.nombre_categoria}</span>
+                        <h4>${nombre}</h4>
+                        <span class="cat">${categoria}</span>
                         <p class="precio">$${precio.toLocaleString("es-AR")}</p>
                     </div>
                     <button class="btn-eliminar-lateral" data-id="${item.carrito_id}" title="Eliminar">&times;</button>
